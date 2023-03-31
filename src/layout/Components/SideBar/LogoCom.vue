@@ -1,19 +1,19 @@
 <template>
   <div class="Logo-container" :class="{ 'collapse': collapse }">
     <Transition name="sideBarLogoFade">
-      <router-link class="sideBar-logo-link" v-if="!collapse" :key="new Date()" to="/WorkTable"  @click="handleReload">
-        <img :src="LogoImg" alt="" id="logo-container">
-        <span>{{ title }}</span>
+      <router-link style="color: white;font-size: 13px" v-if="!collapse" :key="new Date()" to="/WorkTable"  @click="handleReload">
+<!--        <img :src="LogoImg" alt="" id="logo-container">-->
+        <span>都市建筑工程给排水施工设计系统</span>
       </router-link>
       <router-link class="sideBar-logo-link" v-else key="expand" to="/DashBoard/WorkTable">
-        <img :src="LogoImg" alt="">
+<!--        <img :src="LogoImg" alt="">-->
       </router-link>
     </Transition>
   </div>
 </template>
 
 <script>
-import LogoImg from '@/assets/images/Small tree.jpg'
+// import LogoImg from '@/assets/images/Small tree.jpg'
 import useGetters from '@/store/hooks/useGetters'
 import { debounce } from '@/utils/utils'
 import { inject } from 'vue'
@@ -22,8 +22,8 @@ export default {
   setup () {
     const settingsGetters = useGetters('settings', ['collapse'])
     const systemInfo = {
-      title: 'ShuLao Admin',
-      LogoImg
+      title: '都市建筑工程给排水施工设计系统'
+      // LogoImg
     }
     const handleReload = debounce(inject('viewReload'), 600)
     return {

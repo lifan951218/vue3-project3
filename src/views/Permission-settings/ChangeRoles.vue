@@ -1,7 +1,7 @@
 <template>
   <div class="changeRoles-container">
-    <el-switch v-model="identify" active-value="super" inactive-value="common" :active-text="'super admin'"
-      :inactive-text="'common admin'" size="large">
+    <el-switch v-model="identify" active-value="super" inactive-value="common" :active-text="'超级管理员'"
+      :inactive-text="'普通管理员'" size="large">
     </el-switch>
   </div>
 </template>

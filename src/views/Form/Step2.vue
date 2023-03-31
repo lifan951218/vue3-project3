@@ -1,22 +1,19 @@
 <template>
   <el-form :model="form" ref="step2" label-width="100px" :inline="false" size="default">
-    <el-form-item label="付款账户" disabled>
+    <el-form-item label="管道" disabled>
       <el-input v-model="form.payAccount"></el-input>
     </el-form-item>
-    <el-form-item label="收款账户" size="default">
+    <el-form-item label="连接件" size="default">
       <el-input v-model="form.collectAccount" size="default" clearable></el-input>
     </el-form-item>
-    <el-form-item label="收款人姓名" size="default">
+    <el-form-item label="设备仪表" size="default">
       <el-input v-model="form.collectName" size="default" clearable></el-input>
     </el-form-item>
-    <el-form-item label="转账金额" size="default">
+    <el-form-item label="控制阀门" size="default">
       <el-input v-model="form.amount" size="default" clearable></el-input>
     </el-form-item>
-    <el-form-item label="支付密码" size="default">
-      <el-input v-model="payPassword" size="default" clearable type="password" ></el-input>
-    </el-form-item>
     <el-form-item>
-      <el-button type="primary" @click="handlePay" :loading="payLoading">确认并付款</el-button>
+      <el-button type="primary" @click="handlePay" :loading="payLoading">确认并提交</el-button>
       <el-button @click="handleLast">上一步</el-button>
     </el-form-item>
   </el-form>
@@ -43,9 +40,13 @@ form.payAccount = store.state.components.stepForm.payAccount
 form.collectAccount = store.state.components.stepForm.collectAccount
 form.collectName = store.state.components.stepForm.collectName
 form.amount = store.state.components.stepForm.amount
+form.payAccount = '管道1'
+form.collectAccount = '连接件1'
+form.collectName = '设备仪表2'
+form.amount = '控制阀门3'
 console.log(form)
 
-const payPassword = ref('123456')
+// const payPassword = ref('123456')
 
 const handlePay = () => {
   payLoading.value = true

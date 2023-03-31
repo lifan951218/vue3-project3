@@ -35,14 +35,14 @@ const setOption = () => {
   const xData = (function () {
     const data = []
     for (let i = 1; i < 13; i++) {
-      data.push(i + 'month')
+      data.push(i + '月')
     }
     return data
   }())
   chartInstance.value.setOption({
     backgroundColor: '#344b58',
     title: {
-      text: 'statistics',
+      text: '施工设计方案预算趋势',
       x: '20',
       top: '20',
       color: '#fff',
@@ -70,7 +70,7 @@ const setOption = () => {
       x: '5%',
       top: '10%',
       color: '#90979c',
-      data: ['female', 'male', 'average']
+      data: ['管道及连接件预算', '其他预算', '总预算']
     },
     calculable: true,
     xAxis: [{
@@ -139,7 +139,7 @@ const setOption = () => {
       end: 35
     }],
     series: [{
-      name: 'female',
+      name: '管道及连接件预算',
       type: 'bar',
       stack: 'total',
       barMaxWidth: 35,
@@ -172,7 +172,7 @@ const setOption = () => {
     },
 
     {
-      name: 'male',
+      name: '其他预算',
       type: 'bar',
       stack: 'total',
       itemStyle: {
@@ -201,7 +201,7 @@ const setOption = () => {
         220
       ]
     }, {
-      name: 'average',
+      name: '总预算',
       type: 'line',
       stack: 'total',
       symbolSize: 10,

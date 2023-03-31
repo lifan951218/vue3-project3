@@ -5,15 +5,16 @@
         <SvgIcon icon-name="paySuccess" :width="50" :height="50" color="green" />
       </template>
       <el-main height="50px">
-        <div style="font-size: 24px;">操作成功</div>
-        <span style="font-size: 16px;">预计两小时内到账</span>
+        <div style="font-size: 24px;">材料选型成功</div>
+<!--        <span style="font-size: 16px;">预计两小时内到账</span>-->
       </el-main>
     </el-card>
     <el-main>
       <div class="paySuccess-info">
-        <span>付款账户:</span><span class="info-text">{{ payAccount }}</span>
+        <span>请前往数据报表查看</span>
+<!--        <span>付款账户:</span><span class="info-text">{{ payAccount }}</span>-->
       </div>
-      <div class="paySuccess-info">
+<!--      <div class="paySuccess-info">
         <span>收款账户:</span><span class="info-text">{{ collectAccount }}</span>
       </div>
       <div class="paySuccess-info">
@@ -21,7 +22,7 @@
       </div>
       <div class="paySuccess-info">
         <span>转账金额:</span><span class="info-text">{{ amount }}</span>
-      </div>
+      </div>-->
     </el-main>
   </div>
 </template>
@@ -30,8 +31,9 @@
 import SvgIcon from '@/icons/SvgIcon.vue'
 import { useStore } from 'vuex'
 
+// eslint-disable-next-line no-unused-vars
 const store = useStore()
-const { payAccount, collectAccount, collectName, amount } = store.state.components.stepForm
+// const { payAccount, collectAccount, collectName, amount } = store.state.components.stepForm
 </script>
 
 <style lang='scss' scoped>

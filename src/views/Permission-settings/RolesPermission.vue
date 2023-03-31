@@ -1,14 +1,14 @@
 <template>
   <section class="roles-container">
     <div ref="footer" class="table-container">
-      <span>Admin Account</span>
+      <span>管理员账户</span>
       <el-table :data="state.adminCount" border stripe v-loading="accountLoading">
         <el-table-column v-for="col in adminColumn" :key="col.name" :prop="col.name" :label="col.name">
         </el-table-column>
       </el-table>
     </div>
     <div class="table-container">
-      <span>Admin List</span>
+      <span>管理员列表</span>
       <div class="settings-box">
         <el-tooltip content="固定 name 列" placement="top" effect="dark">
           <el-switch v-model="fixed" :active-value="true" :inactive-value="false">
@@ -128,11 +128,11 @@ state.adminList = computed(() => {
 })
 
 const tableColumn = reactive([
-  {
-    name: 'id',
-    width: 160,
-    sortable: true
-  },
+  // {
+  //   name: 'id',
+  //   width: 160,
+  //   sortable: true
+  // },
   {
     name: 'name',
     width: 160,
@@ -154,11 +154,11 @@ const tableColumn = reactive([
   {
     name: 'depart',
     width: 160
-  },
-  {
-    name: 'identify',
-    width: 160
   }
+  // {
+  //   name: 'identify',
+  //   width: 160
+  // }
 ])
 
 const handleRoles = (scope) => {

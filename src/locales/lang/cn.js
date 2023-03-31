@@ -21,14 +21,14 @@ export default {
     Guide_Start: '导航开始',
     Icon_Copy: '图标复制',
     Copy: '图标',
-    ECharts_Cool: 'ECharts 图表',
-    BrokenLine_EChart: '折线图',
-    ComplexTable_EChart: '复杂图表',
+    ECharts_Cool: '报表管理',
+    BrokenLine_EChart: '建筑参数报表',
+    ComplexTable_EChart: '方案预算统计',
     KeyBoard_EChart: '键盘图表',
-    Form: '表单',
-    Base_Form: '基础单',
-    Drag_Form: '可拖动表单',
-    StepByStep_Form: '分步表单',
+    Form: '施工方案设计',
+    Base_Form: '建筑参数输入',
+    Drag_Form: '管道布局生成',
+    StepByStep_Form: '材料选型',
     Inline_Document: '内嵌文档',
     Element_Plus: '组件库 elm-plus',
     Project: '项目文档',
@@ -47,14 +47,14 @@ export default {
     MarkDown_Edit: 'MarkDown 编辑',
     Drag_To_Upload: '拖动上传',
     Scroll_To_Top: '滚动到顶部',
-    Excel_Variable: 'Excel 表格',
-    Export_Selected: '导出选中项',
-    Export_Excel: '导出 Excel',
-    Multi_Header: '多级表头',
+    Excel_Variable: '设计方案管理',
+    Export_Selected: '设计方案导出',
+    Export_Excel: '方案审核',
+    Multi_Header: '数据管理',
     Upload_Excel: '上传 excel'
   },
   searchPlaceholder: '搜索页面名称',
   main: {
-    footer: '底裤都快被看穿了, 亲~'
+    // footer: '底裤都快被看穿了, 亲~'
   }
 }

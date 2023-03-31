@@ -5,7 +5,7 @@
   <transition enter-active-class="screen-locker-lock" leave-active-class="screen-locker-unlock">
     <div v-if="open" class="screen-locker">
       <div class="screen-avatar">
-        <el-avatar shape="square" fit="scale-down" style="height: 160px;" :size="256" src="http://5b0988e595225.cdn.sohucs.com/images/20180925/cc30335c38194040b08ce20853f6f54c.gif" />
+        <el-avatar shape="square" fit="scale-down" style="height: 160px;" :size="256" src="http://5b0988e595225.cdn.sohucs.com/images/20230925/cc30335c38194040b08ce20853f6f54c.gif" />
         <div class="screen-nickname">Vue3 Admin Plus</div>
       </div>
       <div ref="slider" class="screen-slider">

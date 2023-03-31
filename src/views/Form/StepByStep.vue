@@ -1,8 +1,8 @@
 <template>
   <el-container direction="vertical" class="stepForm">
     <el-header height="120px">
-      <div>分步表单</div>
-      <span>将一个冗长或用户不熟悉的表单任务分成多个步骤，指导用户完成。</span>
+      <div>材料选型</div>
+      <span>都市建筑工程给排水施工设计系统的材料选型步骤</span>
     </el-header>
     <el-container direction="vertical">
       <el-card shadow="never" :body-style="{ padding: '30px 120px' }">
@@ -40,18 +40,18 @@ const currentForm = ref(0)
 
 const StepsList = reactive([
   {
-    title: '填写转账信息',
-    description: '确保填写正确',
+    title: '候选材料选择',
+    description: '选择适合的材料',
     icon: 'edit'
   },
   {
-    title: '确认转账信息',
-    description: '确认转账信息',
+    title: '确认材料信息',
+    description: '确认材料信息',
     icon: 'check'
   },
   {
-    title: '完成转账',
-    description: '恭喜您，转账成功',
+    title: '完成材料选型',
+    description: '恭喜您，材料选型成功',
     icon: 'paySuccess'
   }
 ])

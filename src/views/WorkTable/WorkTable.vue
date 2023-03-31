@@ -13,15 +13,16 @@
           <el-row :gutter="20">
             <el-col :span="12" :offset="0" class="nowInfo-container">
               <el-image :src="avatar" fit="fill" :lazy="true"></el-image>
-              <div class="welcome-box">
-                <div class="greeting-text">{{ dayDivision }}好! {{ nickname }}, 又是美好的一天开始啦!</div>
-                <span>
-                  <SvgIcon icon-name="location" /> {{ $store.state.user.city }}
-                </span><span>今天天气 {{ user.weather }}</span> <span>风级
-                  {{ user.windPower }}</span> <span>温度
-                  {{ user.temp }}</span>
-                <span>湿度 {{ user.humidity }}</span>
-              </div>
+              <div style="font-size: 25px;margin-left: 35px">都市建筑工程给排水施工设计系统</div>
+<!--              <div class="welcome-box">-->
+<!--                <div class="greeting-text">{{ dayDivision }}好! {{ nickname }}, 又是美好的一天开始啦!</div>-->
+<!--                <span>-->
+<!--                  <SvgIcon icon-name="location" /> {{ $store.state.user.city }}-->
+<!--                </span><span>今天天气 {{ user.weather }}</span> <span>风级-->
+<!--                  {{ user.windPower }}</span> <span>温度-->
+<!--                  {{ user.temp }}</span>-->
+<!--                <span>湿度 {{ user.humidity }}</span>-->
+<!--              </div>-->
             </el-col>
             <el-col :span="12" :offset="0">
               <el-row :gutter="20" justify="center" align="middle">
@@ -55,26 +56,26 @@
             <el-col :span="12" :offset="0" style="padding: 0;">
               <div class="project-item" v-for="item in projectList.slice(0, 3)" :key="item.name">
                 <div class="project-item-header">
-                  <SvgIcon :icon-name="item.icon" :width="30" :height="30" />
+<!--                  <SvgIcon :icon-name="item.icon" :width="30" :height="30" />-->
                   <span>{{ item.name }}</span>
                 </div>
                 <div class="project-item-introduce">{{ item.introduce }}</div>
                 <div class="project-item-footer">
                   <span class="footer-right">{{ item.author }}</span>
-                  <span class="footer-left">{{ item.finishTime }}</span>
+<!--                  <span class="footer-left">{{ item.finishTime }}</span>-->
                 </div>
               </div>
             </el-col>
             <el-col :span="12" :offset="0" style="padding: 0;">
               <div class="project-item" v-for="item in projectList.slice(3, 6)" :key="item.name">
                 <div class="project-item-header">
-                  <SvgIcon :icon-name="item.icon" :width="30" :height="30" />
+<!--                  <SvgIcon :icon-name="item.icon" :width="30" :height="30" />-->
                   <span>{{ item.name }}</span>
                 </div>
                 <div class="project-item-introduce">{{ item.introduce }}</div>
                 <div class="project-item-footer">
                   <span class="footer-right">{{ item.author }}</span>
-                  <span class="footer-left">{{ item.finishTime }}</span>
+<!--                  <span class="footer-left">{{ item.finishTime }}</span>-->
                 </div>
               </div>
             </el-col>
@@ -90,12 +91,12 @@
               </Router-link>
             </div>
           </div>
-          <el-carousel type="card" height="240px" direction="horizontal" :initial-index="0" :autoplay="true"
+<!--          <el-carousel type="card" height="240px" direction="horizontal" :initial-index="0" :autoplay="true"
             :interval="3000" :loop="true" trigger="hover" indicator-position="outside" arrow="hover">
             <el-carousel-item v-for="(img, index) in imgsList" :key="index">
               <img :src="img" alt="">
             </el-carousel-item>
-          </el-carousel>
+          </el-carousel>-->
         </el-col>
       </el-row>
     </el-main>
@@ -104,17 +105,17 @@
 
 <script setup>
 import { getWeather } from '@/api/user'
-import useGetters from '@/store/hooks/useGetters'
-import { getNowTime } from '@/utils/utils'
+// import useGetters from '@/store/hooks/useGetters'
+// import { getNowTime } from '@/utils/utils'
 import { toRefs } from 'vue'
 import { useStore } from 'vuex'
 import SvgIcon from '@/icons/SvgIcon.vue'
-import imgsList from './img'
+// import imgsList from './img'
 
 const store = useStore()
-const { avatar, nickname } = toRefs(store.state.user)
+const { avatar } = toRefs(store.state.user)
 
-const { dayDivision } = getNowTime()
+// const { dayDivision } = getNowTime()
 
 // getCity().then(res => {
 //   console.log(res)
@@ -141,49 +142,49 @@ if (!store.state.user.weather) {
   })
 }
 
-const user = useGetters('user', ['weather', 'windPower', 'temp', 'humidity'])
+// const user = useGetters('user', ['weather', 'windPower', 'temp', 'humidity'])
 
 const projectList = [
   {
     icon: 'github',
-    name: 'Github',
-    introduce: '是一个面向开源及私有软件项目的托管平台。',
-    author: '开源君',
+    name: '城市供水系统',
+    introduce: '设计城市供水系统以为居民和企业提供清洁、安全的饮用水。',
+    author: '管理员1',
     finishTime: '2021-07-10'
   },
   {
     icon: 'vue',
-    name: 'Vue',
-    introduce: '渐进式 JavaScript 框架',
-    author: '学不动也要学',
+    name: '市政污水管道网络',
+    introduce: '设计市政污水管道网络以将污水从住宅区商业区和工业区输送到污水处理厂。',
+    author: '管理员2',
     finishTime: '2021-10-25'
   },
   {
     icon: 'html5',
-    name: 'Html5',
-    introduce: 'HTML5是互联网的下一代标准。',
-    author: '撸码也是一种艺术',
+    name: '城市污水处理厂',
+    introduce: '设计城市污水处理厂以净化排放到自然环境中的废水。',
+    author: '用户3',
     finishTime: '2022-01-19'
   },
   {
     icon: 'angular',
-    name: 'Angular',
-    introduce: '现代 Web 开发平台，百万粉丝热捧。',
-    author: '铁粉君',
+    name: '高层建筑的雨水收集系统',
+    introduce: '设计高层建筑的雨水收集系统以收集并储存雨水，并将其用于灌溉等用途。',
+    author: '用户2',
     finishTime: '2022-03-09'
   },
   {
     icon: 'react',
-    name: 'React',
-    introduce: '用于构建用户界面的 JavaScript 库',
-    author: '技术牛',
+    name: '绿色建筑的雨水利用系统',
+    introduce: '利用系统以最大限度地减少室内用水量，并将雨水用于植物灌溉的用途。',
+    author: '用户3',
     finishTime: '2022-04-11'
   },
   {
     icon: 'js',
-    name: 'Js',
-    introduce: '路是走出来的，而不是空想出来的。',
-    author: '瓦要变强',
+    name: '高速公路休息站给排水系统',
+    introduce: '设计高速公路休息站的给排水系统以满足高人流量休息站的用水和排水需求。',
+    author: '用户4',
     finishTime: '2022-06-10'
   }
 ]
@@ -203,25 +204,25 @@ const quicklyList = [
   },
   {
     icon: 'form',
-    name: '表单',
+    name: '施工方案设计',
     path: '/Form/DragForm',
     color: '#51c4f1'
   },
   {
     icon: 'excel',
-    name: '表格',
+    name: '方案审核管理',
     path: '/ExcelVariable/ExportExcel',
     color: '#dbee98'
   },
   {
     icon: 'document',
-    name: '内嵌文档',
+    name: '建筑参数报表',
     path: '/InlineDoc/InlineProject',
     color: '#6b7280'
   },
   {
     icon: 'pieChart',
-    name: 'EChart 图表',
+    name: '方案预算统计',
     path: '/EChartsCool/ComplexChart',
     color: '#bf9eee'
   }

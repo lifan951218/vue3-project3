@@ -12,16 +12,16 @@ const PermissionSettings = {
     roles: ['superAdmin', 'commonAdmin']
   },
   children: [
-    {
-      path: 'MasterStation',
-      name: 'MasterStation',
-      meta: {
-        title: i18n.global.t('routes.Master_Station'),
-        roles: ['superAdmin'],
-        icon: 'dashboard'
-      },
-      component: () => import('@/views/Permission-settings/MasterStation.vue')
-    },
+    // {
+    //   path: 'MasterStation',
+    //   name: 'MasterStation',
+    //   meta: {
+    //     title: i18n.global.t('routes.Master_Station'),
+    //     roles: ['superAdmin'],
+    //     icon: 'dashboard'
+    //   },
+    //   component: () => import('@/views/Permission-settings/MasterStation.vue')
+    // },
     {
       path: 'RolesPermission',
       name: 'RolesPermission',

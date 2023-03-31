@@ -1,16 +1,25 @@
 <template>
   <div class="baseTable-container">
     <el-form :model="form" ref="formRef" :rules="formRules" label-width="100px" :inline="false" size="default">
-      <el-form-item label="姓名">
-        <el-input v-model="form.name" placeholder="请输入姓名" clearable></el-input>
-      </el-form-item>
-      <el-form-item label="爱好">
-        <el-select v-model="form.hobby" value-key="" placeholder="" clearable filterable>
+      <el-form-item label="建筑用途">
+        <el-select v-model="form.hobby" value-key="" placeholder="请选择建筑用途" clearable filterable>
           <el-option v-for="item in selectOptions" :key="item.value" :label="item.label" :value="item.value">
           </el-option>
         </el-select>
       </el-form-item>
-      <el-form-item label="性别">
+      <el-form-item label="建筑物类型">
+        <el-select v-model="form.hobby" value-key="" placeholder="请选择建筑物类型" clearable filterable>
+          <el-option v-for="item in selectOptions" :key="item.value" :label="item.label" :value="item.value">
+          </el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item label="建筑面积">
+        <el-input v-model="form.name" placeholder="请输入建筑面积" clearable></el-input>
+      </el-form-item>
+      <el-form-item label="人口密度">
+        <el-input v-model="form.name" placeholder="请输入人口密度" clearable></el-input>
+      </el-form-item>
+      <el-form-item label="水源">
         <el-radio-group v-model="form.gender">
           <el-radio v-for="item in radioItems" :key="item.label" :label="item.label">
             {{ item.label }}
@@ -21,13 +30,13 @@
         <el-input class="input-textarea" v-model="form.remarks" placeholder="" type="textarea" size="default" clearable>
         </el-input>
       </el-form-item>
-      <el-form-item label="头像">
-        <!-- <el-upload action="" ref="upload" :on-remove="" :auto-upload="false" multiple :limit="5" :on-exceed=""
+<!--      <el-form-item label="头像">
+        &lt;!&ndash; <el-upload action="" ref="upload" :on-remove="" :auto-upload="false" multiple :limit="5" :on-exceed=""
           :file-list="">
-          <el-button slot="trigger" size="small" type="primary">select file</el-button> -->
-        <!-- <el-button style="margin-left: 10px;" size="small" type="success" @click="">upload to server</el-button> -->
-        <!-- <div slot="tip" class="el-upload__tip">jpg/png files with a size less than 500kb</div> -->
-        <!-- </el-upload> -->
+          <el-button slot="trigger" size="small" type="primary">select file</el-button> &ndash;&gt;
+        &lt;!&ndash; <el-button style="margin-left: 10px;" size="small" type="success" @click="">upload to server</el-button> &ndash;&gt;
+        &lt;!&ndash; <div slot="tip" class="el-upload__tip">jpg/png files with a size less than 500kb</div> &ndash;&gt;
+        &lt;!&ndash; </el-upload> &ndash;&gt;
       </el-form-item>
       <el-form-item label="创建时间">
         <el-time-picker v-model="form.createTime" size="default" arrow-control :picker-options="{
@@ -40,6 +49,11 @@
       </el-form-item>
       <el-form-item label="生日" size="default">
         <el-calendar v-model="form.birthday" :first-day-of-week="1"></el-calendar>
+      </el-form-item>-->
+      <el-form-item label="排水布局图">
+        <div class="drop" @drop="handleDrop" @dragover="handleDragover" @dragenter="handleDragover" style="margin-bottom: 15px">
+          <el-button :loading="loading" size="default" type="primary" @click="handleUpload">点击上传排水布局图</el-button>
+        </div>
       </el-form-item>
       <el-form-item label="地区">
         <el-cascader :options="cityList" v-model="form.location" size="large" separator=">" :debounce="600" clearable
@@ -92,9 +106,12 @@ const formRules = reactive({
 const selectOptions = ref([])
 const radioItems = ref([
   {
-    label: 'male'
+    label: '自来水'
   }, {
-    label: 'female'
+    label: '地下水'
+  },
+  {
+    label: '雨水'
   }])
 
 const handleSubmit = () => { }

@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import ExcelVariable from './modules/Excel-variable/excel-variable.js'
 import PermissionSettings from './modules/Permission-settings/permission-settings.js'
-import Components from './modules/Components-demo/components-demo.js'
+// import Components from './modules/Components-demo/components-demo.js'
 import Layout from '@/layout/index.vue'
 import { i18n } from '@/locales/i18n.js'
 
@@ -54,102 +54,53 @@ export const constantRoutes = [
         component: () => import('@/views/WorkTable/WorkTable.vue')
       }
     ]
-  }, {
-    path: '/Guide',
-    name: 'Guide',
-    component: Layout,
-    redirect: '/Guide/Start',
-    alwaysShow: true,
-    meta: {
-      title: i18n.global.t('routes.Project_Guide'),
-      icon: 'guide'
-    },
-    children: [
-      {
-        path: 'Start',
-        name: 'Guide Start',
-        meta: {
-          title: i18n.global.t('routes.Guide_Start')
-        },
-        component: () => import('@/views/Guide/index.vue')
-      }
-    ]
   }
+  // {
+  //   path: '/Guide',
+  //   name: 'Guide',
+  //   component: Layout,
+  //   redirect: '/Guide/Start',
+  //   alwaysShow: true,
+  //   meta: {
+  //     title: i18n.global.t('routes.Project_Guide'),
+  //     icon: 'guide'
+  //   },
+  //   children: [
+  //     {
+  //       path: 'Start',
+  //       name: 'Guide Start',
+  //       meta: {
+  //         title: i18n.global.t('routes.Guide_Start')
+  //       },
+  //       component: () => import('@/views/Guide/index.vue')
+  //     }
+  //   ]
+  // }
 ]
 
 export const asyncRoutes = [
-  {
-    path: '/Icon',
-    name: 'Icon',
-    component: Layout,
-    redirect: '/Icon/Copy',
-    meta: {
-      title: i18n.global.t('routes.Icon_Copy'),
-      icon: 'icon',
-      roles: ['superAdmin', 'commonAdmin']
-    },
-    children: [
-      {
-        path: 'Copy',
-        name: 'Copy',
-        component: () => import('@/views/IconCopy/index.vue'),
-        meta: {
-          title: i18n.global.t('routes.Copy')
-        }
-      }
-    ]
-  },
-  PermissionSettings,
-  Components,
-  {
-    path: '/DownloadPdf/pdf',
-    hidden: true,
-    name: 'pdf',
-    component: () => import('@/views/Components-demo/pdfPage.vue'),
-    meta: {
-      title: 'pdf',
-      icon: 'pdf'
-    }
-  },
-  ExcelVariable,
-  {
-    path: '/EChartsCool',
-    name: 'EChartsCool',
-    component: Layout,
-    redirect: 'EChartsCool/BrokenLine',
-    meta: {
-      icon: 'pieChart',
-      title: i18n.global.t('routes.ECharts_Cool'),
-      roles: ['superAdmin', 'commonAdmin']
-    },
-    children: [
-      {
-        path: 'BrokenLine',
-        name: 'BrokenLine',
-        component: () => import('@/views/ECharts-cool/BrokenLine.vue'),
-        meta: {
-          icon: 'lineChart',
-          title: i18n.global.t('routes.BrokenLine_EChart')
-        }
-      }, {
-        path: 'KeyBoard',
-        name: 'KeyBoard',
-        component: () => import('@/views/ECharts-cool/KeyBoard.vue'),
-        meta: {
-          icon: 'keyboard',
-          title: i18n.global.t('routes.KeyBoard_EChart')
-        }
-      }, {
-        path: 'ComplexChart',
-        name: 'ComplexChart',
-        component: () => import('@/views/ECharts-cool/ComplexChart.vue'),
-        meta: {
-          icon: 'complexChart',
-          title: i18n.global.t('routes.ComplexTable_EChart')
-        }
-      }
-    ]
-  },
+  // {
+  //   path: '/Icon',
+  //   name: 'Icon',
+  //   component: Layout,
+  //   redirect: '/Icon/Copy',
+  //   meta: {
+  //     title: i18n.global.t('routes.Icon_Copy'),
+  //     icon: 'icon',
+  //     roles: ['superAdmin', 'commonAdmin']
+  //   },
+  //   children: [
+  //     {
+  //       path: 'Copy',
+  //       name: 'Copy',
+  //       component: () => import('@/views/IconCopy/index.vue'),
+  //       meta: {
+  //         title: i18n.global.t('routes.Copy')
+  //       }
+  //     }
+  //   ]
+  // },
+  // Components,
   {
     path: '/Form',
     name: 'Form',
@@ -187,85 +138,138 @@ export const asyncRoutes = [
         }
       }
     ]
-  }, {
-    path: '/Error',
-    name: 'Error',
-    component: Layout,
-    redirect: '/Error/404',
+  },
+  {
+    path: '/DownloadPdf/pdf',
+    hidden: true,
+    name: 'pdf',
+    component: () => import('@/views/Components-demo/pdfPage.vue'),
     meta: {
-      title: i18n.global.t('routes.Error_Pages'),
-      icon: 'error',
+      title: 'pdf',
+      icon: 'pdf'
+    }
+  },
+  ExcelVariable,
+  {
+    path: '/EChartsCool',
+    name: 'EChartsCool',
+    component: Layout,
+    redirect: 'EChartsCool/BrokenLine',
+    meta: {
+      icon: 'pieChart',
+      title: i18n.global.t('routes.ECharts_Cool'),
       roles: ['superAdmin', 'commonAdmin']
     },
     children: [
       {
-        path: '403',
-        component: () => import('@/views/Error-page/403.vue'),
-        name: '403',
+        path: 'BrokenLine',
+        name: 'BrokenLine',
+        component: () => import('@/views/ECharts-cool/BrokenLine.vue'),
         meta: {
-          icon: '403',
-          title: 403
+          icon: 'lineChart',
+          title: i18n.global.t('routes.BrokenLine_EChart')
         }
-      }, {
-        path: '404',
-        component: () => import('@/views/Error-page/404.vue'),
-        name: '404',
-        meta: {
-          icon: '404',
-          title: 404
-        }
-      }
-    ]
-  }, {
-    path: '/InlineDoc',
-    name: 'InlineDoc',
-    component: Layout,
-    redirect: '/InlineDoc/InlineComponent',
-    meta: {
-      icon: 'document',
-      title: i18n.global.t('routes.Inline_Document'),
-      roles: ['superAdmin', 'commonAdmin']
-    },
-    children: [
+      },
+      // {
+      //   path: 'KeyBoard',
+      //   name: 'KeyBoard',
+      //   component: () => import('@/views/ECharts-cool/KeyBoard.vue'),
+      //   meta: {
+      //     icon: 'keyboard',
+      //     title: i18n.global.t('routes.KeyBoard_EChart')
+      //   }
+      // },
       {
-        path: 'InlineComponent',
-        name: 'InlineComponent',
-        link: 'https://element-plus.org/zh-CN/',
-        component: () => import('@/views/InlineDoc/InlineComponent.vue'),
+        path: 'ComplexChart',
+        name: 'ComplexChart',
+        component: () => import('@/views/ECharts-cool/ComplexChart.vue'),
         meta: {
-          icon: 'inlineComponent',
-          title: i18n.global.t('routes.Element_Plus')
-        }
-      }, {
-        path: 'InlineProject',
-        name: 'InlineProject',
-        component: () => import('@/views/InlineDoc/InlineProject.vue'),
-        meta: {
-          icon: 'inlineProject',
-          title: i18n.global.t('routes.Project')
-        }
-      }
-    ]
-  }, {
-    path: '/Link',
-    name: 'About',
-    redirect: '/Link/To',
-    component: Layout,
-    meta: {
-      title: i18n.global.t('routes.External_Link'),
-      icon: 'link',
-      roles: ['superAdmin', 'commonAdmin']
-    },
-    children: [
-      {
-        path: 'https://github.com/Shulaolao/vue3-element-admin-system',
-        name: 'External Link',
-        meta: {
-          title: i18n.global.t('routes.External_Link')
+          icon: 'complexChart',
+          title: i18n.global.t('routes.ComplexTable_EChart')
         }
       }
     ]
   },
+  PermissionSettings,
+  // {
+  //   path: '/Error',
+  //   name: 'Error',
+  //   component: Layout,
+  //   redirect: '/Error/404',
+  //   meta: {
+  //     title: i18n.global.t('routes.Error_Pages'),
+  //     icon: 'error',
+  //     roles: ['superAdmin', 'commonAdmin']
+  //   },
+  //   children: [
+  //     {
+  //       path: '403',
+  //       component: () => import('@/views/Error-page/403.vue'),
+  //       name: '403',
+  //       meta: {
+  //         icon: '403',
+  //         title: 403
+  //       }
+  //     }, {
+  //       path: '404',
+  //       component: () => import('@/views/Error-page/404.vue'),
+  //       name: '404',
+  //       meta: {
+  //         icon: '404',
+  //         title: 404
+  //       }
+  //     }
+  //   ]
+  // }, {
+  //   path: '/InlineDoc',
+  //   name: 'InlineDoc',
+  //   component: Layout,
+  //   redirect: '/InlineDoc/InlineComponent',
+  //   meta: {
+  //     icon: 'document',
+  //     title: i18n.global.t('routes.Inline_Document'),
+  //     roles: ['superAdmin', 'commonAdmin']
+  //   },
+  //   children: [
+  //     {
+  //       path: 'InlineComponent',
+  //       name: 'InlineComponent',
+  //       link: 'https://element-plus.org/zh-CN/',
+  //       component: () => import('@/views/InlineDoc/InlineComponent.vue'),
+  //       meta: {
+  //         icon: 'inlineComponent',
+  //         title: i18n.global.t('routes.Element_Plus')
+  //       }
+  //     }, {
+  //       path: 'InlineProject',
+  //       name: 'InlineProject',
+  //       component: () => import('@/views/InlineDoc/InlineProject.vue'),
+  //       meta: {
+  //         icon: 'inlineProject',
+  //         title: i18n.global.t('routes.Project')
+  //       }
+  //     }
+  //   ]
+  // }, {
+  //   path: '/Link',
+  //   name: 'About',
+  //   redirect: '/Link/To',
+  //   component: Layout,
+  //   meta: {
+  //     title: i18n.global.t('routes.External_Link'),
+  //     icon: 'link',
+  //     roles: ['superAdmin', 'commonAdmin']
+  //   },
+  //   children: [
+  //     {
+  //       path: 'https://github.com/Shulaolao/vue3-element-admin-system',
+  //       name: 'External Link',
+  //       meta: {
+  //         title: i18n.global.t('routes.External_Link')
+  //       }
+  //     }
+  //   ]
+  // },
   {
     // 最后的 ‘*’ 忽略与否的区别：'/' 编码与否
     // https://router.vuejs.org/guide/migration/index.html#removed-star-or-catch-all-routes

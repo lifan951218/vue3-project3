@@ -27,23 +27,25 @@ const ExcelVariable = {
         title: i18n.global.t('routes.Export_Selected'),
         icon: 'select'
       }
-    }, {
-      path: 'MultiHeader',
-      name: 'MultiHeader',
-      component: () => import('@/views/Excel-variable/MultiHeader.vue'),
-      meta: {
-        icon: 'multiHeader',
-        title: i18n.global.t('routes.Multi_Header')
-      }
-    }, {
-      path: 'UploadExcel',
-      name: 'UploadExcel',
-      component: () => import('@/views/Excel-variable/UploadExcel.vue'),
-      meta: {
-        icon: 'upload',
-        title: i18n.global.t('routes.Upload_Excel')
-      }
     }
+    // {
+    //   path: 'MultiHeader',
+    //   name: 'MultiHeader',
+    //   component: () => import('@/views/Excel-variable/MultiHeader.vue'),
+    //   meta: {
+    //     icon: 'multiHeader',
+    //     title: i18n.global.t('routes.Multi_Header')
+    //   }
+    // }
+    // {
+    //   path: 'UploadExcel',
+    //   name: 'UploadExcel',
+    //   component: () => import('@/views/Excel-variable/UploadExcel.vue'),
+    //   meta: {
+    //     icon: 'upload',
+    //     title: i18n.global.t('routes.Upload_Excel')
+    //   }
+    // }
   ]
 }
 
