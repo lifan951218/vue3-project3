@@ -92,6 +92,7 @@ const screenFullIcon = computed(() => {
   return settings.screenFull.value === true ? 'disExpand' : 'expand'
 })
 
+// eslint-disable-next-line no-unused-vars
 const languageIcon = computed(() => {
   return settings.language.value === 'cn' ? 'chinese' : 'english'
 })
@@ -124,6 +125,7 @@ const handlePersonal = async (val) => {
   }
 }
 
+// eslint-disable-next-line no-unused-vars
 const handleI18n = (val) => {
   const map = {
     简中: 'cn',
@@ -141,39 +143,41 @@ const handleI18n = (val) => {
 }
 
 const iconList = computed(() => [
+  // {
+  //   icon: 'github',
+  //   component: 'svg-icon',
+  //   name: 'github',
+  //   id: 'github',
+  //   attrs: {
+  //     // SvgIcon
+  //     width: 18,
+  //     height: 18,
+  //     iconName: 'github',
+  //     // ElSvgIcon
+  //     name: ''
+  //   },
+  //   event: {
+  //     click: () => window.open('https://github.com/Shulaolao/vue-element-admin-system')
+  //   }
+  // },
+  // {
+  //   icon: languageIcon.value,
+  //   name: 'language',
+  //   id: 'language',
+  //   locale: languageIcon.value,
+  //   component: 'svg-icon',
+  //   attrs: {
+  //     width: 20,
+  //     height: 20,
+  //     iconName: languageIcon.value
+  //   },
+  //   options: [
+  //     '简中',
+  //     'English'
+  //   ],
+  //   event: handleI18n
+  // },
   {
-    icon: 'github',
-    component: 'svg-icon',
-    name: 'github',
-    id: 'github',
-    attrs: {
-      // SvgIcon
-      width: 18,
-      height: 18,
-      iconName: 'github',
-      // ElSvgIcon
-      name: ''
-    },
-    event: {
-      click: () => window.open('https://github.com/Shulaolao/vue-element-admin-system')
-    }
-  }, {
-    icon: languageIcon.value,
-    name: 'language',
-    id: 'language',
-    locale: languageIcon.value,
-    component: 'svg-icon',
-    attrs: {
-      width: 20,
-      height: 20,
-      iconName: languageIcon.value
-    },
-    options: [
-      '简中',
-      'English'
-    ],
-    event: handleI18n
-  }, {
     icon: screenFullIcon.value,
     component: 'svg-icon',
     name: screenFullIcon.value,

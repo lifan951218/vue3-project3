@@ -32,7 +32,7 @@
     <el-table :data="articleList" border stripe v-loading="loading" min-height="300px"
               :row-style="{ 'user-select': 'none' }" ref="table">
       <el-table-column type="selection" align="center"></el-table-column>
-      <el-table-column align="center" v-for="col in tableColumns" :prop="col.name" :key="col.name" :label="col.name"
+      <el-table-column align="center" v-for="col in tableColumns" :prop="col.name" :key="col.name" :label="col.label"
                        :width="col?.width" :min-width="col?.minWidth">
       </el-table-column>
     </el-table>
@@ -51,26 +51,32 @@ const loading = ref(true)
 const tableColumns = ref([
   {
     name: 'id',
+    label: '参数编号',
     width: 40
   },
   {
-    name: 'name',
+    name: 'type',
+    label: '建筑物类型',
     width: 320
   },
   {
-    name: 'depart',
+    name: 'use',
+    label: '建筑物用途',
     width: 150
   },
   {
-    name: 'assignee',
+    name: 'squa',
+    label: '建筑面积',
     width: 150
   },
   {
-    name: 'status',
+    name: 'pipeline',
+    label: '管道要求',
     width: 200
   },
   {
-    name: 'time',
+    name: 'water',
+    label: '最大流量',
     minWidth: 220
   }
   // {
@@ -89,69 +95,84 @@ getArticle({ page: 1, limit: 20 }).then(res => {
   articleList.value = [
     {
       id: 1,
-      name: 'Article 1',
-      depart: 'Department 1',
-      assignee: 'Assignee 1',
-      status: '待审核',
-      time: '2023-01-01 00:00:00'
+      type: '高速公路收费站',
+      use: '疏通下水',
+      squa: '1.23平方公里',
+      pipeline: '>100米',
+      water: '100'
     },
     {
       id: 2,
-      name: 'Article 2',
-      depart: 'Department 2',
-      assignee: 'Assignee 2',
-      status: '待审核',
-      time: '2023-01-01 00:00:00'
+      type: '城市供水系统',
+      use: '疏通下水',
+      squa: '1.24平方公里',
+      pipeline: '>101米',
+      water: '103'
     },
     {
       id: 3,
-      name: 'Article 3',
-      depart: 'Department 3',
-      assignee: 'Assignee 3',
-      status: '待审核',
-      time: '2023-01-01 00:00:00'
+      type: '城市污水处理厂',
+      use: '疏通下水',
+      squa: '1.25平方公里',
+      pipeline: '>102米',
+      water: '104'
     },
     {
       id: 4,
-      name: 'Article 4',
-      depart: 'Department 4',
-      assignee: 'Assignee 4',
-      status: '待审核',
-      time: '2023-01-01 00:00:00'
+      type: '高速公路休息站',
+      use: '疏通下水',
+      squa: '1.26平方公里',
+      pipeline: '>103米',
+      water: '105'
     },
     {
       id: 5,
-      name: 'Article 5',
-      depart: 'Department 5',
-      assignee: 'Assignee 5',
-      status: '待审核',
-      time: '2023-01-01 00:00:00'
+      type: '市政污水管道网络',
+      use: '疏通下水',
+      squa: '1.27平方公里',
+      pipeline: '>104米',
+      water: '106'
     },
     {
       id: 6,
-      name: 'Article 6',
-      depart: 'Department 6',
-      assignee: 'Assignee 6',
-      status: '待审核',
-      time: '2023-01-01 00:00:00'
+      type: '高速公路收费站',
+      use: '疏通下水',
+      squa: '1.28平方公里',
+      pipeline: '>105米',
+      water: '107'
     },
     {
       id: 7,
-      name: 'Article 7',
-      depart: 'Department 7',
-      assignee: 'Assignee 7',
-      status: '待审核',
-      time: '2023-01-01 00:00:00'
+      type: '高速公路收费站',
+      use: '疏通下水',
+      squa: '1.29平方公里',
+      pipeline: '>106米',
+      water: '108'
     },
     {
       id: 8,
-      name: 'Article 8',
-      depart: 'Department 8',
-      assignee: 'Assignee 8',
-      status: '待审核',
-      time: '2023-01-01 00:00:00'
-    }
-  ]
+      type: '高速公路收费站',
+      use: '疏通下水',
+      squa: '1.30平方公里',
+      pipeline: '>107米',
+      water: '109'
+    },
+    {
+      id: 9,
+      type: '高速公路收费站',
+      use: '疏通下水',
+      squa: '1.31平方公里',
+      pipeline: '>108米',
+      water: '110'
+    },
+    {
+      id: 10,
+      type: '高速公路收费站',
+      use: '疏通下水',
+      squa: '1.32平方公里',
+      pipeline: '>109米',
+      water: '111'
+    }]
   loading.value = false
 })
 

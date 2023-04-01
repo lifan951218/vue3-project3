@@ -32,14 +32,14 @@
     <el-table :data="articleList" border stripe v-loading="loading" min-height="300px" :header-row-style="{ background: '#4868b0' }"
       :row-style="{ 'user-select': 'none' }" ref="table" @selection-change="toggleSelect">
       <el-table-column type="selection" align="center"></el-table-column>
-      <el-table-column v-for="col in tableColumns" :prop="col.name" :key="col.name" :label="col.name"
+      <el-table-column v-for="col in tableColumns" :prop="col.name" :key="col.name" :label="col.label"
         :width="col?.width" :min-width="col?.minWidth" align="center">
       </el-table-column>
-<!--      <el-table-column align="center" prop="importance" label="Importance" :width="120">-->
-<!--        <template #default="">-->
-<!--          <el-button type="text" size="small">审核</el-button>-->
-<!--        </template>-->
-<!--      </el-table-column>-->
+      <el-table-column align="center" prop="importance" label="操作" :width="120">
+        <template #default="">
+          <el-button type="text" size="small">设计预览</el-button>
+        </template>
+      </el-table-column>
     </el-table>
   </div>
 </template>
@@ -70,26 +70,31 @@ const exportLoading = ref(false)
 const tableColumns = ref([
   {
     name: 'id',
+    label: '方案编号',
     width: 40
   },
   {
     name: 'name',
+    label: '方案名称',
     width: 320
   },
   {
     name: 'depart',
+    label: '所属部门',
     width: 150
   },
   {
     name: 'assignee',
+    label: '设计人员',
     width: 150
   },
-  {
-    name: 'status',
-    width: 200
-  },
+  // {
+  //   name: 'status',
+  //   width: 200
+  // },
   {
     name: 'time',
+    label: '创建时间',
     minWidth: 220
   }
   // {
@@ -114,67 +119,67 @@ getArticle({ page: 1, limit: 20 }).then(res => {
   articleList.value = [
     {
       id: 1,
-      name: 'Article 1',
+      name: '方案 1',
       depart: 'Department 1',
       assignee: 'Assignee 1',
       status: '待审核',
-      time: '2023-01-01 00:00:00'
+      time: '2023-01-01 08:10:00'
     },
     {
       id: 2,
-      name: 'Article 2',
+      name: '方案 2',
       depart: 'Department 2',
       assignee: 'Assignee 2',
       status: '待审核',
-      time: '2023-01-01 00:00:00'
+      time: '2023-01-01 08:10:00'
     },
     {
       id: 3,
-      name: 'Article 3',
+      name: '方案 3',
       depart: 'Department 3',
       assignee: 'Assignee 3',
       status: '待审核',
-      time: '2023-01-01 00:00:00'
+      time: '2023-01-01 08:10:00'
     },
     {
       id: 4,
-      name: 'Article 4',
+      name: '方案 4',
       depart: 'Department 4',
       assignee: 'Assignee 4',
       status: '待审核',
-      time: '2023-01-01 00:00:00'
+      time: '2023-01-01 08:10:00'
     },
     {
       id: 5,
-      name: 'Article 5',
+      name: '方案 5',
       depart: 'Department 5',
       assignee: 'Assignee 5',
       status: '待审核',
-      time: '2023-01-01 00:00:00'
+      time: '2023-01-01 08:10:00'
     },
     {
       id: 6,
-      name: 'Article 6',
+      name: '方案 6',
       depart: 'Department 6',
       assignee: 'Assignee 6',
       status: '待审核',
-      time: '2023-01-01 00:00:00'
+      time: '2023-01-01 08:10:00'
     },
     {
       id: 7,
-      name: 'Article 7',
+      name: '方案 7',
       depart: 'Department 7',
       assignee: 'Assignee 7',
       status: '待审核',
-      time: '2023-01-01 00:00:00'
+      time: '2023-01-01 08:10:00'
     },
     {
       id: 8,
-      name: 'Article 8',
+      name: '方案 8',
       depart: 'Department 8',
       assignee: 'Assignee 8',
       status: '待审核',
-      time: '2023-01-01 00:00:00'
+      time: '2023-01-01 08:10:00'
     }
   ]
   loading.value = false

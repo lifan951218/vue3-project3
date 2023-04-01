@@ -24,7 +24,7 @@
         </el-form-item>
       </el-form>
     </div>-->
-    <el-dialog title="Dialog Form" v-model="dialogVisible" width="30%" draggable>
+    <el-dialog title="管道布局配置" v-model="dialogVisible" width="30%" draggable>
       <el-form :model="dialogInfo" ref="form" label-width="120px" :inline="false" size="default">
         <el-form-item label="管道布局图名称">
           <el-input v-model="dialogInfo.hobby" placeholder="请填写名称" size="default" clearable></el-input>

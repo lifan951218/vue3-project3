@@ -1,5 +1,5 @@
 import superAvatar from '@/assets/images/Big tree.jpg'
-import smallAvatar from '@/assets/images/Small tree.jpg'
+// import smallAvatar from '@/assets/images/Small tree.jpg'
 
 export const tokens = {
   superAdmin: {
@@ -23,7 +23,7 @@ export const users = {
     nickname: '老树',
     roles: ['commonAdmin'],
     information: 'I am an common administrator',
-    avatar: smallAvatar,
+    // avatar: smallAvatar,
     name: 'Common Admin'
   }
 }
